@@ -1,0 +1,240 @@
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+
+body{
+	background-image: url('../img/background.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.japan__name{
+	text-align: center;
+	width:fit-content;
+	margin: 15px auto;
+	.japan__name__title{
+		font-family: 'M PLUS Rounded 1c', sans-serif;
+		margin-top: 40px;
+		font-size: 100px;
+	}
+	.japan__name__subtitle{
+		font-family: 'Noto Sans', sans-serif;
+		margin: 20px 0 20px 0;
+		color: rgb(90, 90, 90);
+		font-size: 15px;
+	}
+
+}
+.wrapper{
+	padding: 30px 20px;
+	max-width: 1000px;
+	margin: 20px auto;
+	background-color: rgba(255, 255, 255, 0.933);
+	border: 1px solid lightgrey;
+	h2{	
+		font-family: 'Noto Sans', sans-serif;
+		margin: 15px 0 0 0;
+		font-weight: 700;
+		font-size: 30px;
+	}
+	a{
+		font-weight: 600;
+		color: cornflowerblue;
+		transition: 0.1s;
+		&:hover{
+			color: rgb(3, 71, 197);
+		}
+		
+	}
+	.highlight{
+		font-weight: 600;
+	}
+	.text{
+		font-family: 'Noto Sans', sans-serif;
+		margin: 10px 0 0 0;
+		font-size: 20px;
+	}
+	.sources{
+		font-family: 'Noto Sans', sans-serif;
+		font-style: italic;
+		margin:10px;
+	}
+	.image__subtitle{
+		font-family: 'Noto Sans', sans-serif;
+		color: rgb(59, 59, 59);
+		text-align: center;
+	}
+	ul{
+		
+		li{
+			color: green;
+			margin: 10px;
+			transition: 0.3s;
+			&::before{
+				content:"";
+				background-image: url("../img/check.png");
+				background-size: 15px 15px;
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+				margin: 0 5px 0 0;
+				transition: 0.3s;
+			}
+			&:hover{
+				color: red;
+			}
+			&:hover::before{
+				content:"";
+				background-image: url("../img/check_hover.png");
+				background-size: 15px 15px;
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+				margin: 0 5px 0 0;
+			}
+		}
+	}
+	img{
+		margin: 5px;
+		width: 700px;
+		height: auto;
+	}
+	.spoiler{
+		font-family: 'Noto Sans', sans-serif;
+		font-size: 25px;
+		margin: 10px 0;
+		padding: 10px;
+		background-color: rgb(237, 237, 237);
+		border: 1px solid rgb(189, 189, 189);
+		summary{
+			font-size: 20px;
+			cursor: pointer;
+    		display: block;
+			&:hover{
+				text-decoration: underline;
+			}
+			
+		
+		}
+		p{
+			margin:20px;
+		}
+	}
+	.text__game{
+		font-family: 'Gouranga-pixel';
+		text-align: center;
+		font-size: 25px;
+	}
+}
+.game{
+	font-family: 'Gouranga-pixel';
+	margin: 20px auto;
+	width: 500px;;
+	height: 500px;
+	//border: 2px solid black;
+	box-sizing: border-box;
+	
+	.game__header{
+	font-size: 15px;
+	width: 100%;
+	height: 10%;
+	//border: 2px solid red;
+	box-sizing: border-box;
+	display:flex;
+	}
+	.table{
+	width: 100%;
+	background-color: rgb(0, 0, 0);
+	color: white;
+	}
+	.win{
+		opacity: 0;
+		transition: 1s;
+		background: rgb(255, 238, 238);
+		width: 500px;
+		height:450px;
+		position: absolute;
+		font-size: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		z-index: 100;
+
+		&.active{
+			opacity: 1;
+		}
+	}
+	.end{
+		opacity: 0;
+		transition: 1s;
+		background: rgb(255, 238, 238);
+		width: 500px;
+		height:450px;
+		position: absolute;
+		font-size: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		z-index: 100;
+
+		&.active{
+			opacity: 1;
+		}
+	}
+	canvas{
+		background: rgb(185, 185, 185);
+		position: relative;
+	}
+	#canvas{
+		width: 100%;
+		height: 90%;
+		border: 2px solid green;
+	}
+}
+
+@font-face {
+	font-family: 'Gouranga-pixel';
+	src: url('../fonts/Gouranga/Gouranga-Pixel.eot');
+	src: url('../fonts/Gouranga/Gouranga-Pixel.eot?#iefix') format('embedded-opentype'),
+		  url('../fonts/Gouranga/Gouranga-Pixel.svg#Gouranga-Pixel') format('svg'),
+		  url('../fonts/Gouranga/Gouranga-Pixel.ttf') format('truetype'),
+		  url('../fonts/Gouranga/Gouranga-Pixel.woff') format('woff'),
+		  url('../fonts/Gouranga/Gouranga-Pixel.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+ }
