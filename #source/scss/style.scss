@@ -159,12 +159,22 @@ body{
 		font-size: 25px;
 	}
 }
+.game__body{
+	display:flex;
+	flex-wrap: wrap;
+	
+	.game__buttons{
+		width: 50%;
+	}
+	.controls{
+		width: 50%;
+	}
+}
 .game{
 	font-family: 'Gouranga-pixel';
-	margin: 20px auto;
-	width: 500px;;
-	height: 500px;
-	//border: 2px solid black;
+	width:450px;
+	height: 450px;
+	margin: 0 auto;
 	box-sizing: border-box;
 	
 	.game__header{
@@ -184,8 +194,8 @@ body{
 		opacity: 0;
 		transition: 1s;
 		background: rgb(255, 238, 238);
-		width: 500px;
-		height:450px;
+		width: 450px;
+		height:405px;
 		position: absolute;
 		font-size: 30px;
 		display: flex;
@@ -202,8 +212,8 @@ body{
 		opacity: 0;
 		transition: 1s;
 		background: rgb(255, 238, 238);
-		width: 500px;
-		height:450px;
+		width: 450px;
+		height:405px;
 		position: absolute;
 		font-size: 30px;
 		display: flex;
@@ -227,6 +237,39 @@ body{
 	}
 }
 
+.choose__level{
+	display: flex;
+	justify-content: space-between;
+	font-family: 'Gouranga-pixel';
+	&__back{
+		margin: 10px 0 0 0;
+		width: 230px;
+		height: 50px;
+		text-align: center;
+		color: white;
+		background-color: black;
+		font-size: 15px;
+		transition: 0.3s;
+		&:hover{
+			background-color: rgb(50, 50, 50);
+			box-shadow: 0 0 2px black;
+		}
+	}
+	&__next{
+		margin: 10px 0 0 0;
+		width: 230px;
+		height: 50px;
+		text-align: center;
+		color: white;
+		background-color: black;
+		font-size: 15px;
+		transition: 0.3s;
+		&:hover{
+			background-color: rgb(50, 50, 50);
+			box-shadow: 0 0 2px black;
+		}
+	}
+}
 @font-face {
 	font-family: 'Gouranga-pixel';
 	src: url('../fonts/Gouranga/Gouranga-Pixel.eot');

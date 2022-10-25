@@ -82,24 +82,36 @@
                 <div class="sources">Информация была взята из журнала «Компьютерра» 24 июля 2007.</div>
             </div>
             <div class="text__game">Ниже представлена авторская версия игры сокобан. Наслаждайтесь :)</div>
-            <div class="game">
-                <div class="game__header">
-                    <table class="table">
-                        <tr>
-                            <th>Level № <span id="spanN"></span></th>
-                            <th>Boxes <span id="spanBox">0/0</span></th>
-                            <th>Moves <span id="spanMoves">0(0)</span></th>
-                        </tr>
-                    </table>
+            <div class="game__body">
+                <div class="game__buttons">
+                    <div class="game">
+                        <div class="game__header">
+                            <table class="table">
+                                <tr>
+                                    <th>Level № <span id="spanN"></span></th>
+                                    <th>Boxes <span id="spanBox">0/0</span></th>
+                                    <th>Moves <span id="spanMoves">0(0)</span></th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="win">
+                            <div>Win!</div>
+                        </div>
+                        <div class="end">
+                            <div>You are the best!!!</div>
+                        </div>
+                        <canvas id="canvas"></canvas>
+                    </div>
+                    <div class="choose__level">
+                        <button class="choose__level__back">Предыдуший уровень</button>
+                        <button class="choose__level__next">Следуйщий уровень</button>
+                    </div>
                 </div>
-                <div class="win">
-                    <div>Win!</div>
+                <div class="controls">
+               
                 </div>
-                <div class="end">
-                    <div>You are the best!!!</div>
-                </div>
-                <canvas id="canvas"></canvas>
             </div>
+
         </div>
     </main>
     <script src="js/script.js"></script>

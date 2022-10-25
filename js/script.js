@@ -114,6 +114,7 @@ window.addEventListener('keydown', e =>{
     console.log(e);
     if(e.code === "KeyW" || e.code === "ArrowUp"){
         currMove = moveUp;
+        e.preventDefault();
         check();
     }
     if(e.code === "KeyA" || e.code === "ArrowLeft"){
@@ -122,6 +123,7 @@ window.addEventListener('keydown', e =>{
     }
     if(e.code === "KeyS" || e.code === "ArrowDown"){
         currMove = moveDown;
+        e.preventDefault();
         check();
     }
     if(e.code === "KeyD" || e.code === "ArrowRight"){
@@ -391,8 +393,37 @@ const startGame = (lab) =>{
     }
     
 }
-console.log(totalMap.length);
+const buttonBack = document.querySelector(".choose__level__back");
+const buttonNext = document.querySelector(".choose__level__next");
 
+buttonBack.addEventListener("mouseup", function(ev) {
+    if(level <= 0) {
+        return;
+    }
+    else {
+        level--;
+        console.log(level);
+        history.length = 0;
+        nMoves = 0;
+        localStorage.setItem("current level", level);
+        startGame(level);
+        
+    }
+});
+buttonNext.addEventListener("mouseup", function(ev) {
+    if(level >= totalMap.length-1) {
+        return;
+    }
+    else {
+        level++;
+        console.log(level);
+        history.length = 0;
+        nMoves = 0;
+        localStorage.setItem("current level", level);
+        startGame(level);
+        
+    }
+});
 const win = () => {
     
     document.querySelector('.win').classList.add('active');
@@ -405,6 +436,7 @@ const win = () => {
         startGame(level);
     }, 2000);
     if (totalMap.length <= level) {
+        level--;
         document.querySelector('.end').classList.add('active');
     }
 }
