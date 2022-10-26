@@ -111,26 +111,30 @@ function resizeCanvas(){
 
 let img_man = new Image();
 window.addEventListener('keydown', e =>{
-    console.log(e);
     if(e.code === "KeyW" || e.code === "ArrowUp"){
+        document.querySelector('.W').classList.add('active');
         currMove = moveUp;
         e.preventDefault();
         check();
     }
     if(e.code === "KeyA" || e.code === "ArrowLeft"){
+        document.querySelector('.A').classList.add('active');
         currMove = moveLeft;
         check();
     }
     if(e.code === "KeyS" || e.code === "ArrowDown"){
+        document.querySelector('.S').classList.add('active');
         currMove = moveDown;
         e.preventDefault();
         check();
     }
     if(e.code === "KeyD" || e.code === "ArrowRight"){
+        document.querySelector('.D').classList.add('active');
         currMove = moveRight;
         check();
     }
     if(e.code === "KeyB" || (e.code === "KeyZ" && e.ctrlKey)){
+        document.querySelector('.B').classList.add('active');
         if(history.length > 0){
             const hs = JSON.parse(history.pop());
             map[hs.r0][hs.c0] = hs.b0; 
@@ -142,6 +146,23 @@ window.addEventListener('keydown', e =>{
         drawMap();
     }
     
+});
+window.addEventListener('keyup', e =>{
+    if(e.code === "KeyW" || e.code === "ArrowUp"){
+        document.querySelector('.W').classList.remove('active');
+    }
+    if(e.code === "KeyA" || e.code === "ArrowLeft"){
+        document.querySelector('.A').classList.remove('active');
+    }
+    if(e.code === "KeyS" || e.code === "ArrowDown"){
+        document.querySelector('.S').classList.remove('active');
+    }
+    if(e.code === "KeyD" || e.code === "ArrowRight"){
+        document.querySelector('.D').classList.remove('active');
+    }
+    if(e.code === "KeyB" || (e.code === "KeyZ" && e.ctrlKey)){
+        document.querySelector('.B').classList.remove('active');
+    }
 });
 
 const startMove = () =>{

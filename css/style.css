@@ -203,14 +203,7 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.game__body .game__buttons {
-  width: 50%;
-}
-.game__body .controls {
-  width: 50%;
-}
-
-.game {
+.game__body .game {
   font-family: "Gouranga-pixel";
   width: 450px;
   height: 450px;
@@ -218,7 +211,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.game .game__header {
+.game__body .game .game__header {
   font-size: 15px;
   width: 100%;
   height: 10%;
@@ -228,12 +221,12 @@ body {
   display: -ms-flexbox;
   display: flex;
 }
-.game .table {
+.game__body .game .table {
   width: 100%;
   background-color: rgb(0, 0, 0);
   color: white;
 }
-.game .win {
+.game__body .game .win {
   opacity: 0;
   -webkit-transition: 1s;
   transition: 1s;
@@ -257,10 +250,10 @@ body {
           flex-direction: column;
   z-index: 100;
 }
-.game .win.active {
+.game__body .game .win.active {
   opacity: 1;
 }
-.game .end {
+.game__body .game .end {
   opacity: 0;
   -webkit-transition: 1s;
   transition: 1s;
@@ -284,17 +277,67 @@ body {
           flex-direction: column;
   z-index: 100;
 }
-.game .end.active {
+.game__body .game .end.active {
   opacity: 1;
 }
-.game canvas {
+.game__body .game canvas {
   background: rgb(185, 185, 185);
   position: relative;
 }
-.game #canvas {
+.game__body .game #canvas {
   width: 100%;
   height: 90%;
   border: 2px solid green;
+}
+.game__body .game__buttons {
+  width: 50%;
+}
+.game__body .grid__controls {
+  width: 50%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[5];
+  -ms-grid-columns: (1fr)[4];
+      grid-template: repeat(5, 1fr)/repeat(4, 1fr);
+}
+.game__body .grid__controls .grid__content {
+  font-family: "Gouranga-pixel";
+  font-size: 25px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 21px 20px;
+}
+.game__body .grid__controls .grid__content .grid__button {
+  color: white;
+  background-color: rgb(64, 64, 64);
+  border-radius: 10px;
+  -webkit-box-shadow: 0 12px 0 rgb(0, 0, 0);
+          box-shadow: 0 12px 0 rgb(0, 0, 0);
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.game__body .grid__controls .grid__content .grid__button.active {
+  -webkit-transform: translate(0, 12px);
+          transform: translate(0, 12px);
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .choose__level {
