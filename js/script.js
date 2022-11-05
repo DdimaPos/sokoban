@@ -151,7 +151,6 @@ function resizeCanvas(){
     const {width, height} = ctx.canvas.getBoundingClientRect();
     ctx.canvas.width = width;
     ctx.canvas.height = height;
-
     size_lab.size = ctx.canvas.height/map.length+1;
     size_lab.dX = (ctx.canvas.width - size_lab.size * map[0].length)/2
     drawMap();
