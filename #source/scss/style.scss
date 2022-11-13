@@ -246,6 +246,7 @@ body{
 			align-items: center;
 			padding: 21px 20px;
 			.grid__button{
+				padding: 10px 10px;
 				color: white;
 				background-color: rgb(64, 64, 64);
 				border-radius: 10px;
@@ -303,6 +304,12 @@ body{
 	.game__body{
 		flex-direction: column;
 	}	
+	.game__controls{
+		width: fit-content;
+	}
+	.grid__button{
+		width: fit-content;
+	}
 }
 @font-face {
 	font-family: 'Gouranga-pixel';

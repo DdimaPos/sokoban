@@ -318,6 +318,7 @@ body {
   padding: 21px 20px;
 }
 .game__body .grid__controls .grid__content .grid__button {
+  padding: 10px 10px;
   color: white;
   background-color: rgb(64, 64, 64);
   border-radius: 10px;
@@ -390,6 +391,18 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+
+  .game__controls {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
+  .grid__button {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 }
 @font-face {
