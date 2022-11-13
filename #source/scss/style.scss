@@ -229,10 +229,12 @@ body{
 		}
 	}
 	.game__buttons{
+		margin: 0 auto;
 		width: 50%;
 	}
 	.grid__controls{
 		width: 50%;
+		margin: 0 auto;
 		display: grid;
 		grid-template: repeat(5, 1fr) / repeat(4, 1fr);
 		.grid__content{
@@ -296,6 +298,11 @@ body{
 			box-shadow: 0 0 2px black;
 		}
 	}
+}
+@media (max-width:1000px) {
+	.game__body{
+		flex-direction: column;
+	}	
 }
 @font-face {
 	font-family: 'Gouranga-pixel';

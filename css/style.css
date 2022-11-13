@@ -290,10 +290,12 @@ body {
   border: 2px solid green;
 }
 .game__body .game__buttons {
+  margin: 0 auto;
   width: 50%;
 }
 .game__body .grid__controls {
   width: 50%;
+  margin: 0 auto;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: (1fr)[5];
@@ -382,6 +384,14 @@ body {
           box-shadow: 0 0 2px black;
 }
 
+@media (max-width: 1000px) {
+  .game__body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 @font-face {
   font-family: "Gouranga-pixel";
   src: url("../fonts/Gouranga/Gouranga-Pixel.eot");
