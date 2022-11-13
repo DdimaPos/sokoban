@@ -399,6 +399,9 @@ body {
   }
 }
 @media (max-width: 515px) {
+  img {
+    width: 200px;
+  }
   .game {
     width: 350px;
     height: 400px !important;
@@ -414,6 +417,9 @@ body {
   .end {
     width: 350px;
     height: 340px;
+  }
+  .grid__controls {
+    display: none !important;
   }
 }
 @font-face {
