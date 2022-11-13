@@ -129,7 +129,7 @@ body{
 	}
 	img{
 		margin: 5px;
-		width: 700px;
+		max-width: 700px;
 		height: auto;
 	}
 	.spoiler{
@@ -161,10 +161,12 @@ body{
 }
 .game__body{
 	display:flex;
+	align-items: center;
 	flex-wrap: wrap;
+	
 		.game{
 		font-family: 'Gouranga-pixel';
-		width:470px;
+		max-width:470px;
 		height: 470px;
 		margin: 0 auto;
 		box-sizing: border-box;
@@ -172,7 +174,7 @@ body{
 		.game__header{
 		font-size: 15px;
 		width: 100%;
-		height: 10%;
+		height: 50px;
 		//border: 2px solid red;
 		box-sizing: border-box;
 		display:flex;
@@ -186,8 +188,8 @@ body{
 			opacity: 0;
 			transition: 1s;
 			background: rgb(255, 238, 238);
-			width: 470px;
-			height:423px;
+			width: 470;
+			height:423;
 			position: absolute;
 			font-size: 30px;
 			display: flex;
@@ -204,8 +206,8 @@ body{
 			opacity: 0;
 			transition: 1s;
 			background: rgb(255, 238, 238);
-			width: 470px;
-			height:423px;
+			width: 470;
+			height:423;
 			position: absolute;
 			font-size: 30px;
 			display: flex;
@@ -229,12 +231,12 @@ body{
 		}
 	}
 	.game__buttons{
-		margin: 0 auto;
-		width: 50%;
+		width: 450px;
+		flex-grow: 1;
 	}
 	.grid__controls{
-		width: 50%;
 		margin: 0 auto;
+		width: 450px;
 		display: grid;
 		grid-template: repeat(5, 1fr) / repeat(4, 1fr);
 		.grid__content{
@@ -246,7 +248,7 @@ body{
 			align-items: center;
 			padding: 21px 20px;
 			.grid__button{
-				padding: 10px 10px;
+				padding: 20px 20px;
 				color: white;
 				background-color: rgb(64, 64, 64);
 				border-radius: 10px;
@@ -269,11 +271,11 @@ body{
 
 .choose__level{
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	font-family: 'Gouranga-pixel';
 	&__back{
-		margin: 10px 0 0 0;
-		width: 230px;
+		flex:1 1 230px;
+		margin: 10px 5px 0 0;
 		height: 50px;
 		text-align: center;
 		color: white;
@@ -286,8 +288,8 @@ body{
 		}
 	}
 	&__next{
-		margin: 10px 0 0 0;
-		width: 230px;
+		flex:1 1 230px;
+		margin: 10px 0 0 5px;
 		height: 50px;
 		text-align: center;
 		color: white;
@@ -300,15 +302,27 @@ body{
 		}
 	}
 }
-@media (max-width:1000px) {
-	.game__body{
-		flex-direction: column;
-	}	
-	.game__controls{
-		width: fit-content;
+@media (max-width:740px) {
+	img{
+		width: 400px;
 	}
-	.grid__button{
-		width: fit-content;
+}
+@media (max-width:515px){
+	.game{
+		width: 350px;
+		height: 400px !important;
+	}
+	#canvas{
+		width: 350px;
+		height: 340px !important;
+	}
+	.win{
+		height: 350px;
+		width: 340px;
+	}
+	.end{
+		width: 350px;
+		height: 340px;
 	}
 }
 @font-face {
