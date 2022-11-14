@@ -242,6 +242,17 @@ window.addEventListener('keydown', e =>{
     }
     
 });
+document.querySelector('.previous__move').addEventListener('mousedown', e => {
+    if(history.length > 0){
+        const hs = JSON.parse(history.pop());
+        map[hs.r0][hs.c0] = hs.b0; 
+        map[hs.r1][hs.c1] = hs.b1; 
+        map[hs.r2][hs.c2] = hs.b2; 
+        nMoves++;
+    } 
+    document.getElementById("spanMoves").innerHTML = history.length + "(" + nMoves +")";
+    drawMap();
+});
 window.addEventListener('keyup', e =>{
     if(e.code === "KeyW" || e.code === "ArrowUp"){
         document.querySelector('.W').classList.remove('active');

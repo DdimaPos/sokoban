@@ -235,6 +235,25 @@ body{
 	.game__buttons{
 		width: 450px;
 		flex-grow: 1;
+		.previous__move{
+			display: none;
+			justify-content: space-around;
+			font-family: 'Gouranga-pixel';
+			& button{
+				flex:0 0 230px;
+				margin: 10px auto;
+				height: 50px;
+				text-align: center;
+				color: white;
+				background-color: black;
+				font-size: 15px;
+				transition: 0.3s;
+				&:hover{
+				background-color: rgb(50, 50, 50);
+				box-shadow: 0 0 2px black;
+		}
+			}
+		}
 	}
 	.grid__controls{
 		margin: 0 auto;
@@ -305,8 +324,14 @@ body{
 	}
 }
 @media (max-width:740px) {
+	.previous__move{
+		display: flex !important;
+	}
 	img{
 		width: 400px;
+	}
+	.grid__controls{
+		display: none !important;
 	}
 }
 @media (max-width:515px){
@@ -327,9 +352,6 @@ body{
 	.end{
 		width: 330px!important;
 		height: 330px!important;
-	}
-	.grid__controls{
-		display: none !important;
 	}
 }
 @media(max-width:350px){
