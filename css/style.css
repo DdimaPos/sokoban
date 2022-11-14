@@ -419,17 +419,19 @@ body {
           box-shadow: 0 0 2px black;
 }
 
-@media (max-width: 740px) {
+@media (max-width: 900px) {
   .previous__move {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
   }
-  img {
-    width: 400px;
-  }
   .grid__controls {
     display: none !important;
+  }
+}
+@media (max-width: 800px) {
+  img {
+    width: 400px;
   }
 }
 @media (max-width: 515px) {

@@ -323,16 +323,19 @@ body{
 		}
 	}
 }
-@media (max-width:740px) {
+@media(max-width:900px){
 	.previous__move{
 		display: flex !important;
-	}
-	img{
-		width: 400px;
 	}
 	.grid__controls{
 		display: none !important;
 	}
+}
+@media (max-width:800px) {
+	img{
+		width: 400px;
+	}
+	
 }
 @media (max-width:515px){
 	img{
