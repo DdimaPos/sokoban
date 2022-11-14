@@ -155,56 +155,54 @@ function resizeCanvas(){
     size_lab.dX = (ctx.canvas.width - size_lab.size * map[0].length)/2
     drawMap();
 }
-canvas.addEventListener('touchstart',handleTouchStart, false);
-canvas.addEventListener('touchmove',handleTouchMove, false);
-var xDown = null;
-var yDown = null;
+let touchstartX = 0;
+let touchendX = 0;
+let touchstartY = 0;
+let touchendY = 0;   
 
-function getTouches(ev) {
-    return ev.touches || ev.originalEvent.touches;
-    //browser API or jQuery
-}
-
-function handleTouchStart(ev) {
-    ev.preventDefault();
-    const firstTouch = getTouches(ev)[0];
-    xDown = firstTouch.clientX;
-    yDown = firstTouch.clientY;
-}
-
-function handleTouchMove(ev) {
-    if(!xDown || !yDown) return;
-
-    var xUp = ev.touches[0].clientX;                                    
-    var yUp = ev.touches[0].clientY;
-
-    var xDiff = xUp - xDown;
-    var yDiff = yUp - yDown;
-                          
-    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-        if ( xDiff > 0 ) {
+function checkDirection() {
+    let difX = touchstartX - touchendX;
+    let difY = touchstartY - touchendY;
+    if (Math.abs(difX) > Math.abs(difY)) {
+        if (touchendX < touchstartX) {//left
+            currMove = moveLeft;
+            check();    
+            console.log("left");
+        }
+        if (touchendX > touchstartX) {//right
             currMove = moveRight;
             check();
-            //right
-        } else {
-            currMove = moveLeft;
-            check();
-            //left 
-        }                       
+            console.log("right");
+        }
     } else {
-        if ( yDiff > 0 ) {
+        if (touchendY < touchstartY) {//up
+            currMove = moveUp;
+            check();    
+            console.log("up");
+        }
+        if (touchendY > touchstartY) {//down
             currMove = moveDown;
             check();
-            //down 
-        } else { 
-            currMove = moveUp;
-            check();
-            //up
-        }                                                                 
+            console.log("down");
+        } 
     }
-    xDown = null;
-    yDown = null;    
-}
+    
+    
+};
+
+
+canvas.addEventListener('touchstart', e => {
+    e.preventDefault();
+    touchstartX = e.changedTouches[0].screenX;
+    touchstartY = e.changedTouches[0].screenY;
+});
+
+canvas.addEventListener('touchend', e => {
+    e.preventDefault();
+    touchendX = e.changedTouches[0].screenX;
+    touchendY = e.changedTouches[0].screenY;
+    checkDirection();
+});
 
 let img_man = new Image();
 window.addEventListener('keydown', e =>{
