@@ -155,6 +155,56 @@ function resizeCanvas(){
     size_lab.dX = (ctx.canvas.width - size_lab.size * map[0].length)/2
     drawMap();
 }
+canvas.addEventListener('touchstart',handleTouchStart, false);
+canvas.addEventListener('touchmove',handleTouchMove, false);
+var xDown = null;
+var yDown = null;
+
+function getTouches(ev) {
+    return ev.touches || ev.originalEvent.touches;
+    //browser API or jQuery
+}
+
+function handleTouchStart(ev) {
+    ev.preventDefault();
+    const firstTouch = getTouches(ev)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+}
+
+function handleTouchMove(ev) {
+    if(!xDown || !yDown) return;
+
+    var xUp = ev.touches[0].clientX;                                    
+    var yUp = ev.touches[0].clientY;
+
+    var xDiff = xUp - xDown;
+    var yDiff = yUp - yDown;
+                          
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+        if ( xDiff > 0 ) {
+            currMove = moveRight;
+            check();
+            //right
+        } else {
+            currMove = moveLeft;
+            check();
+            //left 
+        }                       
+    } else {
+        if ( yDiff > 0 ) {
+            currMove = moveDown;
+            check();
+            //down 
+        } else { 
+            currMove = moveUp;
+            check();
+            //up
+        }                                                                 
+    }
+    xDown = null;
+    yDown = null;    
+}
 
 let img_man = new Image();
 window.addEventListener('keydown', e =>{

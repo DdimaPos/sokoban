@@ -251,10 +251,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  z-index: 100;
+  z-index: -1;
 }
 .game__body .game .win.active {
   opacity: 1;
+  z-index: 100;
 }
 .game__body .game .end {
   opacity: 0;
@@ -278,10 +279,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  z-index: 100;
+  z-index: -1;
 }
 .game__body .game .end.active {
   opacity: 1;
+  z-index: 100;
 }
 .game__body .game canvas {
   background: rgb(185, 185, 185);
